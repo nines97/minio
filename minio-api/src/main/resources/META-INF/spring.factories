@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  vip.nines.minio.api.service.fallbcak.MinioApiFallbackFactory

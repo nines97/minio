@@ -1,0 +1,8 @@
+server:
+  port: 9002
+minio:
+  enable: true
+  server: http://minio.nines.vip
+  port: 80
+  accessKey: nines
+  secretKey: ninesnines

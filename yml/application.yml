@@ -1,0 +1,10 @@
+spring:
+  servlet:
+    multipart:
+      # 定义文件上传和请求到最大值
+      max-file-size: 10MB
+      max-request-size: 50MB
+# 使fallback服务降级生效
+feign:
+  sentinel:
+    enabled: true

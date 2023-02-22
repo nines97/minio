@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: minio
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: www.nines.vip:8848
+        namespace: 3ce0863c-4d54-46c6-9beb-e8c65aab803a
+        group: 9s
+      config:
+        group: ${spring.cloud.nacos.discovery.group}
+        file-extension: yml
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        shared-configs:
+          - data-id: application.${spring.cloud.nacos.config.file-extension}
+            group: 9s
+            refresh: true
+          - data-id: ${spring.application.name}.${spring.cloud.nacos.config.file-extension}
+            group: 9s
+            refresh: true
