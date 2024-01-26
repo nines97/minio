@@ -33,7 +33,7 @@ public class MinioClientInitConfig {
     @Bean
     public MinioClient minioClientInit() {
         return MinioClient.builder()
-                .endpoint(minioProperties.getServer(), minioProperties.getPort(), false)
+                .endpoint(minioProperties.getServer(), minioProperties.getPort(), true)
                 .credentials(minioProperties.getAccessKey(), minioProperties.getSecretKey())
                 .build();
     }

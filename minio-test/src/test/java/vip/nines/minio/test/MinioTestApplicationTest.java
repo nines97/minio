@@ -49,17 +49,20 @@ class MinioTestApplicationTest {
     
     @Test
     void upload() throws IOException {
-        File file = new File("/tmp/xuxubaobao.jpeg");
+        File file = new File("/Users/nines/Downloads/Redis.png");
         FileInputStream fis = new FileInputStream(file);
         String contentType = MediaTypeFactory.getMediaType(file.getName()).orElse(MediaType.APPLICATION_OCTET_STREAM).toString();
         // 构建MultipartFile
         MultipartFile multipartFile = new MockMultipartFile(file.getName(), file.getName(), contentType, fis);
         R<MinioFileInfo> fileInfoR = minioApi.upload(multipartFile, "minioapi", bucket, null);
-        MinioFileInfo fileInfo = fileInfoR.getData();
-        
-        log.info("object:" + fileInfo.getObject());
-        log.info("fileName:" + fileInfo.getFileName());
-        log.info("linkedUrl:" + fileInfo.getLinkedUrl());
+        if (fileInfoR.getCode() == 200) {
+            MinioFileInfo fileInfo = fileInfoR.getData();
+            log.info("object:" + fileInfo.getObject());
+            log.info("fileName:" + fileInfo.getFileName());
+            log.info("linkedUrl:" + fileInfo.getLinkedUrl());
+        } else {
+            log.error(fileInfoR.getMsg());
+        }
     }
 
     @Test

@@ -66,7 +66,8 @@ public class MinioUtils {
     public boolean makeBucket(String bucket) {
         try {
             minioClient.makeBucket(MakeBucketArgs.builder().bucket(bucket).build());
-            setBucketVersioning(bucket, true);
+            // 开启桶的版本控制，需要minio支持该功能
+            //setBucketVersioning(bucket, true);
             return true;
         } catch (ErrorResponseException | InsufficientDataException | InternalException | InvalidKeyException |
                  InvalidResponseException | IOException | NoSuchAlgorithmException | ServerException |

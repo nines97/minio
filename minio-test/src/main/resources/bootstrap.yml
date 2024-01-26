@@ -10,9 +10,9 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: www.nines.vip:8848
-        namespace: 3ce0863c-4d54-46c6-9beb-e8c65aab803a
-        group: 9s
+        server-addr: 62.234.170.210:8848
+        namespace: 97656228-9032-4079-8c9e-774f26897859
+        group: minio
       config:
         group: ${spring.cloud.nacos.discovery.group}
         file-extension: yml
@@ -20,5 +20,5 @@ spring:
         namespace: ${spring.cloud.nacos.discovery.namespace}
         shared-configs:
           - data-id: application.${spring.cloud.nacos.config.file-extension}
-            group: 9s
+            group: minio
             refresh: true

@@ -18,12 +18,12 @@
         <project.build.sourceEncoding>project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring.boot.version>2.7.5</spring.boot.version>
+        <spring.boot.version>2.7.7</spring.boot.version>
         <spring.cloud.version>2021.0.5</spring.cloud.version>
-        <spring.cloud.alibaba.version>2021.0.4.0</spring.cloud.alibaba.version>
+        <spring.cloud.alibaba.version>2021.0.1.0</spring.cloud.alibaba.version>
         <minio.version>8.4.5</minio.version>
         <okhttp3.version>4.9.3</okhttp3.version>
-        <hutool.version>5.8.5</hutool.version>
+        <hutool.version>5.8.16</hutool.version>
         <lombok.version>1.18.20</lombok.version>
     </properties>
 
